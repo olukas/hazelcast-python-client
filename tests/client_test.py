@@ -55,7 +55,7 @@ class ClientTest(HazelcastTestCase):
             client2topic.publish("message")
             time.sleep(0.5)
 
-        self.assertEqual(0, len(collector.events))
+        self.assertEqual(1, len(collector.events))
         client1.shutdown()
         client2.shutdown()
         rc.exit()
